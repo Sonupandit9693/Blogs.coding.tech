@@ -15,21 +15,26 @@ const BlogSchema = new mongoose.Schema({
         type: String, 
         required: true,
     },
-    enum:[
-        'Nature',
-        'Mountain',
-        'Ocean',
-        'Wildlife',
-        'Forest',
-    ],
+    category:{
+        type: String,
+        required: true,
+        enum:[
+            'Nature',
+            'Mountain',
+            'Ocean',
+            'Wildlife',
+            'Forest',
+        ]
+    },
     authorId:{
         type: mongoose.Schema.Types.ObjectId,
         ref: "User"
     },
     likes: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "User"
+        type: [mongoose.Schema.Types.ObjectId],
+        ref: "User",
+        default: []
     }
 },{timestamps: true});
 
-export default mongoose.model.Blog || mongoose.model("Blog", BlogSchema);
+export default mongoose?.models?.Blog || mongoose.model("Blog", BlogSchema);

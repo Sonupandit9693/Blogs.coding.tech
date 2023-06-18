@@ -20,7 +20,7 @@ export async function GET(req, ctx){
 export async function PUT(req ,ctx){
     await db.connect();
     const id = ctx.params.id ;
-    const accessToken = req.headers.get("authorization");
+    const accessToken = req.headers.get('authorization');
     const token = accessToken.split(' ')[1];
 
     const decodedToken = verifyJwtToken(token);
@@ -31,7 +31,7 @@ export async function PUT(req ,ctx){
 
     try {
         const body = await req.json();
-        const blog = await Blog.findById(id).populate("authorId");
+        const blog = await Blog.findById(id).populate('authorId');
         if(blog?.authorId?._id.toString() !== decodedToken._id.toString()){
             return new Response(JSON.stringify({msg: "only author can update his blog"}), {status: 403});
         }

@@ -16,7 +16,7 @@ const Login = () => {
         e.preventDefault();
 
         if(password === "" || email === ""){
-            toast.error("fill all fiels!");
+            toast.error("fill all fields!");
         }
         if(password.length < 3){
             toast.error("Password must be 6 character")
@@ -38,12 +38,12 @@ const Login = () => {
     <div className={classes.container}>
         <div className={classes.wrapper}>
            <h2>Log In</h2> 
-           <form onSubmit={handelSubmit} action="">
+           <form onSubmit={handelSubmit}>
             <input type="email" placeholder='Enter your email' onChange={(e)=>setEmail(e.target.value)}/>
             <input type="password" placeholder='Enter your password'onChange={(e)=>setPassword(e.target.value)} />
             <button className={classes.submitButton}>Log in</button>
             <Link className={classes.loginNow} href="/register">
-                Dont have an account? <br />
+                Don&apos;t have an account? <br />
                <span>Register now</span> 
             </Link>
            </form>

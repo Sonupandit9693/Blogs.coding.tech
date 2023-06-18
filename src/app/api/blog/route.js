@@ -1,5 +1,5 @@
 import db from "@/lib/db";
-import { verifyJwtToken, signJwtToken } from "@/lib/jwt";
+import { verifyJwtToken} from "@/lib/jwt";
 import Blog from "@/models/Blog";
 
 export async function GET(req){
