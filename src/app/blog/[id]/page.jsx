@@ -11,7 +11,7 @@ const BlogDetails = (ctx) => {
     console.log(blogDetails);
     useEffect(()=>{
         async function fetchBlog(){
-            const res = await fetch(`http://localhost:3000/api/blog/${ctx.parms.id}`, {cache: 'no-store'})
+            const res = await fetch(`http://localhost:3000/api/blog/${ctx.params.id}`, {cache: 'no-store'})
             const blog =  await res.json();
             setBlogDetails(blog);
 
