@@ -32,4 +32,4 @@ const BlogSchema = new mongoose.Schema({
     }
 },{timestamps: true});
 
-export default mongoose.model.Blog || mongoose.model("blog", BlogSchema);
+export default mongoose.model.Blog || mongoose.model("Blog", BlogSchema);
