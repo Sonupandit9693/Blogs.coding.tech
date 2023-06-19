@@ -6,7 +6,7 @@ import {BsTrash} from 'react-icons/bs'
 import classes from './Comment.module.css'
 import Image from 'next/image'
 
-const Comment = ({comment, setComments}) => {
+const Comment = ({comment, setComments }) => {
   const {data: session} = useSession()
   const token = session?.user?.accessToken
 

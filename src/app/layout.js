@@ -24,3 +24,9 @@ export default function RootLayout({ children, session }) {
     </html>
   )
 }
+
+// Export encountered errors on following paths:
+//         /create-blog/page: /create-blog
+//         /login/page: /login
+//         /page: /
+//         /register/page: /register

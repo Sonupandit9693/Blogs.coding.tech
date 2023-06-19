@@ -10,8 +10,8 @@ import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { format } from 'timeago.js'
 import { useRouter } from 'next/navigation'
-import Comment from '../../../components/comments/Comment'
 import person from '../../../../public/person.jpg'
+import Comment from '@/components/comments/Comment'
 
 const BlogDetails = (ctx) => {
     const [blogDetails, setBlogDetails] = useState("")
@@ -45,7 +45,7 @@ const BlogDetails = (ctx) => {
             setBlogLikes(blog?.likes?.length || 0)
         }
         session && fetchBlog()
-    }, [session])
+    }, [ctx.params.id, session])
 
     const handleDelete = async () => {
         try {

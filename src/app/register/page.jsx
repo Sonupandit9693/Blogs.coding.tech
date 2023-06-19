@@ -16,7 +16,7 @@ const Register = () => {
             toast.error("fill all the filed");
             return;
         }
-        if(password < 4){
+        if(password < 3){
             toast.error("password must be 4 characters");
             return ;
         }
@@ -33,7 +33,7 @@ const Register = () => {
                 toast.success("Successfully register the user")
                 setTimeout(()=>{
                     signIn();
-                },1500)
+                },1000)
                 return
             }else{
                 toast.error("Error occured while registering")

@@ -1,14 +1,13 @@
-import Image from 'next/image'
 import classes from './page.module.css'
-import {blogs} from "../lib/data"
+import React from 'react';
 import BlogCard from "../components/blogcard/BlogCard"
 
-export async function fetchBlog(){
-  const res = await fetch(`http://localhost:3000/api/blog` ,{cache: "no-store"});
-  return res.json();
-}
 
-export default async function Home() {
+const Home= async()=> {
+  async function fetchBlog(){
+    const res = await fetch(`http://localhost:3000/api/blog` ,{cache: "no-store"});
+    return res.json();
+  }
   const blogs = await fetchBlog();
   return (
     <div className={classes.container}>
@@ -22,3 +21,5 @@ export default async function Home() {
     </div>
   )
 }
+
+export default Home;

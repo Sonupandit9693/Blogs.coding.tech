@@ -1,5 +1,4 @@
 'use client'
-
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
@@ -7,7 +6,7 @@ import classes from './Blogcard.module.css'
 import { useSession } from 'next-auth/react'
 import { AiFillLike, AiOutlineLike } from 'react-icons/ai'
 
-const BlogCard = ({ blog: { title, desc, imageUrl, likes, authorId, _id } }) => {
+const BlogCard = ({ blog: { title, desc, imageUrl, likes, _id } }) => {
   const { data: session } = useSession()
   const [isLiked, setIsLiked] = useState(false)
   const [blogLikes, setBlogLikes] = useState(0)
