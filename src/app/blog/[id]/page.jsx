@@ -175,7 +175,7 @@ const BlogDetails = (ctx) => {
                         {
                             comments?.length > 0
                             ? comments.map((comment) => (
-                                <Comment key={comment._id} comment={comment} setComments={setComments}/>
+                                <Comment key={comment?._id} comment={comment} setComments={setComments}/>
                             ))
                             : <h4 className={classes.noComments}>No comments. Be the first one to leave a comment!</h4>
                         }
