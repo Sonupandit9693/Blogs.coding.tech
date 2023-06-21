@@ -26,7 +26,7 @@ const BlogDetails = (ctx) => {
 
     useEffect(() => {
       async function fetchComments(){
-        const res = await fetch(`http://localhost:3000/api/comment/${ctx.params.id}`, {cache: 'no-store'})
+        const res = await fetch(`https://blogs-coding-tech-r7xhjkupj-sonupandit9693.vercel.app/api/comment/${ctx.params.id}`, {cache: 'no-store'})
         const comments = await res.json()
 
         setComments(comments)
@@ -37,7 +37,7 @@ const BlogDetails = (ctx) => {
 
     useEffect(() => {
         async function fetchBlog() {
-            const res = await fetch(`http://localhost:3000/api/blog/${ctx.params.id}`, { cache: 'no-store' })
+            const res = await fetch(`https://blogs-coding-tech-r7xhjkupj-sonupandit9693.vercel.app/api/blog/${ctx.params.id}`, { cache: 'no-store' })
             const blog = await res.json()
 
             setBlogDetails(blog)
@@ -52,7 +52,7 @@ const BlogDetails = (ctx) => {
             const confirmModal = confirm("Are you sure you want to delete your blog?")
 
             if (confirmModal) {
-                const res = await fetch(`http//localhost:3000/api/blog/${ctx.params.id}`, {
+                const res = await fetch(`https://blogs-coding-tech-r7xhjkupj-sonupandit9693.vercel.app/api/blog/${ctx.params.id}`, {
                     headers: {
                         'Content-Type': 'application/json',
                         'Authorization': `Bearer ${session?.user?.accessToken}`
@@ -71,7 +71,7 @@ const BlogDetails = (ctx) => {
 
     const handleLike = async () => {
         try {
-            const res = await fetch(`http://localhost:3000/api/blog/${ctx.params.id}/like`, {
+            const res = await fetch(`https://blogs-coding-tech-r7xhjkupj-sonupandit9693.vercel.app/api/blog/${ctx.params.id}/like`, {
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': `Bearer ${session?.user?.accessToken}`
@@ -107,7 +107,7 @@ const BlogDetails = (ctx) => {
                 text: commentText
             }
 
-            const res = await fetch(`http://localhost:3000/api/comment`, {
+            const res = await fetch(`https://blogs-coding-tech-r7xhjkupj-sonupandit9693.vercel.app/api/comment`, {
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': `Bearer ${session?.user?.accessToken}`
