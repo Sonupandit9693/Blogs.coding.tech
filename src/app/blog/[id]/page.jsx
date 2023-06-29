@@ -27,7 +27,7 @@ const BlogDetails = (ctx) => {
   useEffect(() => {
     async function fetchComments() {
       const res = await fetch(
-        `https://blogs-coding-tech-aksz-ot4o96k28-sonupandit9693.vercel.app/api/comment/${ctx.params.id}`,
+        `https://blogs-coding-tech-aksz.vercel.app/api/comment/${ctx.params.id}`,
         { cache: "no-store" }
       );
       const comments = await res.json();
@@ -40,8 +40,7 @@ const BlogDetails = (ctx) => {
   useEffect(() => {
     async function fetchBlog() {
       const res = await fetch(
-        `https://blogs-coding-tech-aksz-ot4o96k28-sonupandit9693.vercel.app
-            /api/blog/${ctx.params.id}`,
+        `https://blogs-coding-tech-aksz.vercel.app/api/blog/${ctx.params.id}`,
         { cache: "no-store" }
       );
       const blog = await res.json();
@@ -61,7 +60,7 @@ const BlogDetails = (ctx) => {
 
       if (confirmModal) {
         const res = await fetch(
-          `https://blogs-coding-tech-aksz-ot4o96k28-sonupandit9693.vercel.app/api/blog/${ctx.params.id}`,
+          `https://blogs-coding-tech-aksz.vercel.app/api/blog/${ctx.params.id}`,
           {
             headers: {
               "Content-Type": "application/json",
@@ -83,7 +82,7 @@ const BlogDetails = (ctx) => {
   const handleLike = async () => {
     try {
       const res = await fetch(
-        `https://blogs-coding-tech-aksz-ot4o96k28-sonupandit9693.vercel.app/api/blog/${ctx.params.id}/like`,
+        `https://blogs-coding-tech-aksz.vercel.app/api/blog/${ctx.params.id}/like`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -121,7 +120,7 @@ const BlogDetails = (ctx) => {
         text: commentText,
       };
 
-      const res = await fetch(`https://blogs-coding-tech-aksz-ot4o96k28-sonupandit9693.vercel.app/api/comment`, {
+      const res = await fetch(`https://blogs-coding-tech-aksz.vercel.app/api/comment`, {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${session?.user?.accessToken}`,
