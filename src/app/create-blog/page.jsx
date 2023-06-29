@@ -73,7 +73,7 @@ const CreateBlog = () => {
         try {
           const res = await fetch(`https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`, {
             method: "POST",
-            body: JSON.stringify(formData)
+            body: formData
           })
 
           const data = await res.json()

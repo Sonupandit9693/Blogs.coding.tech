@@ -33,7 +33,7 @@ const Register = () => {
                 toast.success("Successfully register the user")
                 setTimeout(()=>{
                     signIn();
-                },1000)
+                },100)
                 return
             }else{
                 toast.error("Error occured while registering")

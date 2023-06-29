@@ -2,15 +2,6 @@ import mongoose from 'mongoose';
 
 const connection = {};
 
-// async function connect() {
-
-//     const db = await mongoose.connect(process.env.MONGO_URL).then(()=>{
-//         console.log("mongoDb connected");
-//     }).catch((e)=>{
-//         console.log(e.message);
-//     });
-// }
-
 async function connect() {
     if (connection.isConnected) {
         return;

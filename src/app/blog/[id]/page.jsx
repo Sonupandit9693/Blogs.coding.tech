@@ -120,14 +120,17 @@ const BlogDetails = (ctx) => {
         text: commentText,
       };
 
-      const res = await fetch(`https://blogs-coding-tech-aksz.vercel.app/api/comment`, {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${session?.user?.accessToken}`,
-        },
-        method: "POST",
-        body: JSON.stringify(body),
-      });
+      const res = await fetch(
+        `https://blogs-coding-tech-aksz.vercel.app/api/comment`,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${session?.user?.accessToken}`,
+          },
+          method: "POST",
+          body: JSON.stringify(body),
+        }
+      );
 
       const newComment = await res.json();
 
