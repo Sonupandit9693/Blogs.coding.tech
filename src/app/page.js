@@ -6,7 +6,7 @@ import BlogCard from "../components/blogcard/BlogCard"
 const Home= async()=> {
   async function fetchBlog(){
     const res = await fetch(`https://blogs-coding-tech-aksz.vercel.app/api/blog` ,{cache: "no-store"});
-    return res.json();
+    return await res.json();
   }
   const blogs = await fetchBlog();
   return (

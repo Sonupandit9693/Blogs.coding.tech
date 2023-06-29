@@ -96,7 +96,7 @@ const Edit = (ctx) => {
         try {
             const res = await fetch(`https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`, {
                 method: "POST",
-                body: formData
+                body: JSON.stringify(formData),
             })
 
             const data = await res.json()
