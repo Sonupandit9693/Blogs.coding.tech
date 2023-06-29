@@ -121,9 +121,22 @@
 
 .right{
     display: flex;
-    align-items: center;
+    justify-content: center;
+    text-align: justify;
+    line-height: 20px;
     gap: 1rem;
     cursor: pointer;
+}
+
+.posted{
+    width: 85%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    margin-left: 30%;
+    margin-right: 100px;
+    padding: 10px;
+    color: black;
+    margin-bottom: 2rem;
 }
 
 /* comments */
