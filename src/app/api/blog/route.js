@@ -7,13 +7,11 @@ export async function GET(req) {
     await db.connect()
 
     try {
-        
         const blogs = await Blog.find({}).limit(16).populate("authorId")
-        return NextResponse.json(blogs, { status: 200 })
+        return new Response(JSON.stringify(blogs), { status: 200 })
     } catch (error) {
-        // throw new Error(error.message);
-        return NextResponse.json({message : error.message}, { status: 500 })
-    } 
+        return new Response(JSON.stringify(null), { status: 500 })
+    }
 }
 
 export async function POST(req) {
