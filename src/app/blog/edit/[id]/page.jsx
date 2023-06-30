@@ -20,7 +20,7 @@ const Edit = (ctx) => {
 
     useEffect(() => {
         async function fetchBlog() {
-            const res = await fetch(`https://blogs-coding-tech-aksz.vercel.app/api/blog/${ctx.params.id}`)
+            const res = await fetch(`${process.env.BASE_URL}/api/blog/${ctx.params.id}`)
 
             const blog = await res.json()
 
@@ -64,7 +64,7 @@ const Edit = (ctx) => {
                 body.imageUrl = imageUrl
             }
             
-            const res = await fetch(`https://blogs-coding-tech-aksz.vercel.app/api/blog/${ctx.params.id}`, {
+            const res = await fetch(`${process.env.BASE_URL}/api/blog/${ctx.params.id}`, {
                 headers: {
                     "Content-Type": 'application/json',
                     "Authorization": `Bearer ${session?.user?.accessToken}`
@@ -96,7 +96,7 @@ const Edit = (ctx) => {
         try {
             const res = await fetch(`https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`, {
                 method: "POST",
-                body: formData,
+                body: formData
             })
 
             const data = await res.json()

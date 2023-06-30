@@ -21,7 +21,7 @@ const Register = () => {
             return ;
         }
         try {
-            const res = await fetch('https://blogs-coding-tech-aksz.vercel.app/api/register',{
+            const res = await fetch(`${process.env.BASE_URL}/api/register`,{
                 headers:{
                     'Content-Type': 'application/json'
                 },
@@ -33,7 +33,7 @@ const Register = () => {
                 toast.success("Successfully register the user")
                 setTimeout(()=>{
                     signIn();
-                },100)
+                },1000)
                 return
             }else{
                 toast.error("Error occured while registering")

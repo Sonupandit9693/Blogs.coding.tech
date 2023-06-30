@@ -41,7 +41,7 @@ const CreateBlog = () => {
         try {
           const imageUrl = await uploadImage()
           
-          const res = await fetch(`https://blogs-coding-tech-aksz.vercel.app/api/blog`, {
+          const res = await fetch(`${process.env.BASE_URL}/api/blog`, {
             headers: {
                'Content-Type': 'application/json',
                'Authorization': `Bearer ${session?.user?.accessToken}` 

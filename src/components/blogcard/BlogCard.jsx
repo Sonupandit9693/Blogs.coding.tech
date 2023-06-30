@@ -19,7 +19,7 @@ const BlogCard = ({ blog: { title, desc, imageUrl, likes, _id } }) => {
 
   const handleLike = async () => {
     try {
-      const res = await fetch(`https://blogs-coding-tech-aksz.vercel.app/api/blog/${_id}/like`, {
+      const res = await fetch(`${process.env.BASE_URL}/api/blog/${_id}/like`, {
         headers: {
           'Authorization': `Bearer ${session?.user?.accessToken}`
         },
